@@ -79,13 +79,31 @@ flowchart TB
 
 **Stack:** Expo 54, React Native 0.81, React 19, expo-router, NativeWind, React Navigation, AsyncStorage, lucide icons. The websocket client is the `connect3dp` package under `vendor/connect3dp`.
 
-| Home | Settings |
+| Home | Printer |
 |---|---|
-| ![Home, no printers on the LAN](docs/media/home.png) | ![Connect3Dp discovery server](docs/media/settings.png) |
+| ![Handy3D home with a Centauri Carbon printing](docs/media/home-connected.png) | ![Live camera, job progress, temperatures, pause and stop](docs/media/printer-status.png) |
 
-The home screen greets the operator and groups printers by brand: Elegoo, Creality, and Bambu Lab. With no host on the network, each group says none were detected. Settings stores the Connect3Dp WebSocket address used for that scan. The default is `ws://localhost:5000/ws`.
+| Files on the printer | Filament |
+|---|---|
+| ![Local gcode files from Connect3Dp](docs/media/local-files.png) | ![AMS 2 Pro slots, colors, and humidity](docs/media/filament.png) |
 
-Opening a printer shows status, files, and history in a bottom tab bar, with controls and filament on separate screens. Filament matching compares the job's materials to the spools loaded on the machine. The Elegoo camera path turns the printer's video stream on from the phone. Other brands do not use that call.
+The home screen groups printers by brand. A Centauri Carbon shows up under Elegoo once the phone is connected to the Connect3Dp host. Opening it shows the live camera, chamber light, model fan, the running job, nozzle / bed / chamber temperatures, and pause and stop.
+
+Local files are the jobs Connect3Dp already has on the printer. Print history is the completed-job tab.
+
+![Print history](docs/media/print-history.png)
+
+The filament screen is the AMS: slot color, material, humidity, and heat. The job card shows which spool is active.
+
+![Job card with nozzle, bed, chamber, and the active AMS slots](docs/media/print-progress.png)
+
+Bambu Lab printers use the same list. A machine can show several jobs, each marked printing or finished.
+
+![Bambu Lab jobs on the same phone app](docs/media/bambu-jobs.png)
+
+Settings stores the Connect3Dp WebSocket address used for discovery. The default is `ws://localhost:5000/ws`.
+
+![Discovery server address](docs/media/settings.png)
 
 ## License
 
