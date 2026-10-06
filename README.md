@@ -79,9 +79,13 @@ flowchart TB
 
 **Stack:** Expo 54, React Native 0.81, React 19, expo-router, NativeWind, React Navigation, AsyncStorage, lucide icons. The websocket client is the `connect3dp` package under `vendor/connect3dp`.
 
-The home screen greets the operator, probes the host, and lists printers found on the LAN plus printers saved by hand. Opening one shows status, files, and history in a bottom tab bar, with controls and filament on separate screens. Filament matching compares the job's materials to the spools loaded on the machine. The Elegoo camera path turns the printer's video stream on from the phone. Other brands do not use that call.
+| Home | Settings |
+|---|---|
+| ![Home, no printers on the LAN](docs/media/home.png) | ![Connect3Dp discovery server](docs/media/settings.png) |
 
-The useful screens need a Connect3Dp host and a printer. This page does not include a device screenshot for that reason.
+The home screen greets the operator and groups printers by brand: Elegoo, Creality, and Bambu Lab. With no host on the network, each group says none were detected. Settings stores the Connect3Dp WebSocket address used for that scan. The default is `ws://localhost:5000/ws`.
+
+Opening a printer shows status, files, and history in a bottom tab bar, with controls and filament on separate screens. Filament matching compares the job's materials to the spools loaded on the machine. The Elegoo camera path turns the printer's video stream on from the phone. Other brands do not use that call.
 
 ## License
 
